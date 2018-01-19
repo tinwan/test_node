@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css'/>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <p>Welcome to <%= title %></p>
+        <ul style="border: 1px solid #cccccc" id="list">
+            <li>
+
+            </li>
+        </ul>
+        <input type="text" id="inputText">
+        <button id="submit">submit</button>
+    <script>
+        var $ = function (str) { return document.getElementById(str);}
+        var ipt = $("inputText"), submit = $("submit");
+debugger;
+        /*var ws = new WebSocket("ws://localhost");
+        ws.onopen = function(evt) {
+            console.log("Connection open ...");
+            // ws.send("Hello WebSockets!");
+        };
+
+        ws.onmessage = function(evt) {
+            console.log( "Received Message: " + evt.data);
+            // ws.close();
+        };
+
+        ws.onclose = function(evt) {
+            console.log("Connection closed.");
+        };*/
+
+        submit.click = function () {
+            ws.send(ipt.value);
+        }
+    </script>
+    </body>
+</html>
